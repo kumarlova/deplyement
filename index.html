@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="int" name="age" placeholder="age" required="required" />
+        <input type="float" name="education" placeholder="education" required="required" />
+       <input type="float" name="totChol" placeholder="totChol" required="required" />
+       <input type="float" name="BMI" placeholder="BMI" required="required" />
+       <input type="float" name="heartRate" placeholder="heartRate" required="required" />
+      <input type="float" name="glucose" placeholder="glucose" required="required" />
+      <input type="float" name="cigsPerDay_Average consumtion" placeholder="cigsPerDay_Average consumtion" required="required" />
+      <input type="float" name="prevalentStroke_1" placeholder="prevalentStroke_1" required="required" />
+      <input type="float" name="BP_1" placeholder="BP_1" required="required" />
+      <input type="float" name="BP_2" placeholder="BP_2" required="required" />
+     <input type="float" name="BP_3" placeholder="BP_3" required="required" />
+		<input type="float" name="BP_4" placeholder="BP_4" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
